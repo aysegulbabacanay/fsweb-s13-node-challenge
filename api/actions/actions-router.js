@@ -23,14 +23,12 @@ router.get("/:id", validateActionsId, (req, res, next) => {
 
 router.post("/", validateActions, async (req, res, next) => {
   try {
-    const newAction = await ActionsModel.insert(req.body)
-    res.json(newAction)
-
-//aşağıdaki gibi neden olmadı ?
-    //    const newAction = await ActionsModel.insert({ 
+     const newAction = await ActionsModel.insert(req.body)
+     res.json(newAction)
+    //   const newAction = await ActionsModel.insert({ 
     //     notes: req.notes,
     //     description: req.description,
-    //     project_id: project_id})
+    //    project_id: req.project_id})
     // res.json(newAction)
   
   } catch (err) {
